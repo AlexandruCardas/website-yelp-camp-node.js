@@ -1,4 +1,4 @@
-<% include ../partials/header %> 
+<%- include('../partials/header.ejs'); -%>
 
      <header class="jumbotron">
          <div class="container">
@@ -10,10 +10,11 @@
               <p>
               <form action="/campgrounds" method="GET" class="form-inline" id="campground-search">
                 <div class="form-group">
-                  <input type="text" name="search" placeholder="Campground search..." class="form-control">
+                    <label>
+                        <input type="text" name="search" placeholder="Campground search..." class="form-control">
+                    </label>
                 </div>
               </form>
-             </p>
          </div>
      </header>
      
@@ -33,4 +34,4 @@
         <% }); %>
     </div>
 
-<% include ../partials/footer %>
+<%- include('../partials/footer.ejs'); -%>
