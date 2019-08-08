@@ -15,7 +15,7 @@ router.get("/register", function(req, res){
 
 //handle sign up logic
 router.post("/register", function(req, res){
-    var newUser = new User({username: req.body.username});
+    let newUser = new User({username: req.body.username});
     if(req.body.adminCode === process.env.ADMIN_CODE) {
       newUser.isAdmin = true;
     }
@@ -26,7 +26,7 @@ router.post("/register", function(req, res){
         }
         passport.authenticate("local")(req, res, function(){
            req.flash("success", "Successfully Signed Up! Nice to meet you " + req.body.username);
-           res.redirect("/campgrounds"); 
+           res.redirect("/campgrounds");
         });
     });
 });
