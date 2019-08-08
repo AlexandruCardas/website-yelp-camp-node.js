@@ -23,9 +23,9 @@ const commentRoutes = require("./routes/comments"),
 // assign mongoose promise library and connect to database
 mongoose.Promise = global.Promise;
 
-const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/yelp_camp';
+const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/YelpCamp?authSource=admin';
 
-mongoose.connect(databaseUri, {useNewUrlParser: true})
+mongoose.connect(databaseUri, {user: "calexc95", pass: "MyMongo1995!?", useNewUrlParser: true})
     .then(() => console.log(`Database connected`))
     .catch(err => console.log(`Database connection error: ${err.message}`));
 
@@ -36,7 +36,7 @@ app.use(methodOverride('_method'));
 app.use(cookieParser('secret'));
 //require moment
 app.locals.moment = require('moment');
-// seedDB(); //seed the database
+ // seedDB(); //seed the database
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
