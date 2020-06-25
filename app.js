@@ -1,17 +1,16 @@
-const express = require("express"),
-    app = express(),
-    bodyParser = require("body-parser"),
-    mongoose = require("mongoose"),
-    passport = require("passport"),
-    cookieParser = require("cookie-parser"),
-    LocalStrategy = require("passport-local"),
-    flash = require("connect-flash"),
-    Campground = require("./models/campground"),
-    Comment = require("./models/comment"),
-    User = require("./models/user"),
-    session = require("express-session"),
-    seedDB = require("./seeds"),
-    methodOverride = require("method-override");
+import express from 'express';
+
+const app = express();
+import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
+import passport from 'passport';
+import cookieParser from 'cookie-parser';
+import LocalStrategy from 'passport-local';
+import flash from 'connect-flash';
+import User from './models/user';
+import session from 'express-session';
+import seedDB from './seeds';
+import methodOverride from 'method-override';
 // configure dotenv
 require("dotenv").config();
 
